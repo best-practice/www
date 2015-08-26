@@ -1,0 +1,127 @@
+<script type="text/javascript">
+SLIDE_START_STYLE = "narrow";
+SLIDE_NO_TURNING = 0;
+SLIDE_PAGE_TAG = 1;
+SLIDE_PAGE_FORMAT = "<table style='width:100%; border:0px; font-size:12px; text-align:center;'><tr><td style='width:10%;'></td><td style='width:10%;'></td><td></td><td style='width:10%;'>%current% / %total%</td><td style='width:10%;'></td></tr></table>";
+SLIDE_PAGE_UPDN = "";
+SLIDE_TITLE = "在 github 上构建博客系统";
+</script>
+<section class='slides template-default'>
+
+<style id='background-css'>
+body {background:rgb(216,216,216);}
+</style>
+<style id='logo-css'>
+.slides.template-default > article:not(.nologo) {}
+</style>
+
+<article id='article-0'>
+<div class="S6 img-resource" _zindex="0"><a href="http://www.pinp.me/">Html5 slide PPT powered by PINP</a></div>
+<div class="ebook-title" _zindex="1000" _config="default-large-small default-looser-impacted default-hidden" _left="-348" _top="-144" _width="680"><h1>在 github 上构建博客系统<br><br></h1></div>
+<div class="p1-p2-p3-p0" _zindex="1000" _config="default-large-small default-looser-impacted p1-p2-p3-p0" _left="-346" _top="21" _width="500"><p>wayne chan<br>2015/07/11</p></div>
+<div class="p1-p2-p3-p0 small-default-large" _zindex="1000" _config="small-default-large default-looser-impacted p1-p2-p3-p0" _left="-262" _top="-62" _width="508"><p style="text-align: center;"><span style="color:#B22222;">（建议在桌面浏览器中阅读本胶片）</span></p>
+</div>
+<div class="ebook-keyword normal-large-small hidden-default" _zindex="1000" _config="normal-large-small default-looser-impacted hidden-default" _left="-343" _top="144" _width="506" _height="34"><p>#前后端开发最佳实践#, github, 静态服务托管，动态服务，拼文</p>
+</div>
+</article>
+
+<article id='article-1'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>为什么要在github建立“拼文”博客系统</h3>
+</div>
+<div class="p1-p2-p3-p0 small-default-large" _zindex="1000" _config="small-default-large default-looser-impacted p1-p2-p3-p0" _left="-376" _top="-190" _width="778"><p>其一：现有github上的博客系统功能都很弱</p>
+
+<p style="margin-left: 40px;">1) 表现力差，都是markdown文档，在制表、绘图、嵌入演示胶片等方面，弱爆了！</p>
+
+<p style="margin-left: 40px;">2) 社交化不足，如点赞、评论、分主题归类，相关文档推荐等</p>
+
+<p>&nbsp;</p>
+
+<p>其二：<span style="">&nbsp;</span><a href="https://pages.github.com/" style="" target="_blank">github pages</a><span style="">&nbsp;已提供不错的静态网站托管能力</span></p>
+
+<ol>
+	<li>免费！&nbsp;只要你托管的东西是公开的</li>
+	<li>不限大小，没找到官方明确限定的说明，有网友论证过小于 500M 的项目没啥限制</li>
+	<li>无流量限制 （当前是这样，不清楚以后会不会变）</li>
+	<li>还可以捆绑域名</li>
+</ol>
+</div>
+</article>
+
+<article id='article-6'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>实现原理（1）</h3></div>
+<div class="p1-p2-p3-p0 small-default-large" _zindex="1000" _config="small-default-large default-looser-impacted p1-p2-p3-p0" _left="-400" _top="-244" _width="821"><p>借助&nbsp;<a href="https://pages.github.com/" target="_blank">github pages</a>&nbsp;提供的静态网页服务，PINP Blog大致安装过程是：</p>
+
+<ol>
+	<li>在github上 Fork 我们提供的样板库（缺省已设到gh-pages分支）</li>
+	<li>在github上在线进行若干配置</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p>如果挪到本机来撰写博客：</p>
+
+<ol>
+	<li>在本机用git clone命令克隆该项目</li>
+	<li>撰写博客，并配置 title, description, keywords 等</li>
+	<li>用 pd.updatelist 批处理命令更新博客目录</li>
+	<li>用 git push 更新到 github</li>
+</ol>
+</div>
+<div class="svg-shape small-default-large p1-p2-p3-p0 center-right-default" _zindex="998" _config="small-default-large default-looser-impacted p1-p2-p3-p0 center-right-default" _widget="['rgb(51,51,51)','rgb(226,226,226)',0,3,['']]" _left="-306" _top="147" _width="39" _height="138"><div class='shape-canvas'></div><div class="rotate-txt"></div><div class="img-resource"><link rel="bookmark" type="text/xml" href="/software/slide11/$images/shape/dialog7.svg.json"></div></div>
+<div class="svg-shape small-default-large p1-p2-p3-p0 center-right-default" _zindex="998" _config="small-default-large default-looser-impacted p1-p2-p3-p0 center-right-default" _widget="['rgb(51,51,51)','rgb(226,226,226)',0,3,['']]" _left="229" _top="148" _width="39" _height="138"><div class='shape-canvas' style="-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);"></div><div class="rotate-txt"></div><div class="img-resource"><link rel="bookmark" type="text/xml" href="/software/slide11/$images/shape/dialog7.svg.json"></div></div>
+<div class="p1-p2-p3-p0" _zindex="1000" _config="default-large-small default-looser-impacted p1-p2-p3-p0" _left="-267" _top="154" _width="504"><p>概括来说，在github.com托管的代码，其gh-pages分支可在 github.io 域名下按静态页方式访问。</p></div>
+</article>
+
+<article id='article-2'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>实现原理（2）</h3></div>
+<div class="p3-p0-p1-p2" _zindex="1000" _config="default-large-small default-looser-impacted p3-p0-p1-p2" _left="-387" _top="-254" _width="792"><p>Github还提供一些内置服务，如：第3方oauth授权，直接文件上传等，以 javascript 接口方式提供调用。</p>
+
+<p>oauth可用于跨系统身份认证，如，登录github账号后，请求 pinp.me 账号授权，即：以github账号登录pinp.me网站。oauth还可用于两个github账号间的授权认证，这能用来构造可信的群成员关系链。</p>
+
+<p>但 git pages 提供的服务本质是静态页托管，不能在服务侧驻留代码，各项功能严重依赖客户端的Javascript代码，所以，github.io 网站能提供的功能是受限，我们要用 pinp.me 另行增加后台服务。</p>
+</div>
+</article>
+
+<article id='article-3'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>在静态页中拓展动态功能</h3></div>
+<div class="p1-p2-p3-p0" _zindex="1000" _config="default-large-small default-looser-impacted p1-p2-p3-p0" _left="-408" _top="-234" _width="821"><p>在Github上的静态页嵌入动态服务不算难，满足如下几个条件即可：</p>
+
+<ol>
+	<li>动态服务由第3方网站（比如www.pinp.me）提供<br>
+	github 服务侧无法支持你的代码在其上运行</li>
+	<li>因涉及跨域调用，第3方网站要指定Access-Control-Allow-Origin，让静态页可访问第3方网站提供的服务。</li>
+	<li>对于通过 iframe 内嵌的服务，还要借助postMessage 接口用消息方式实现跨窗通信。</li>
+</ol>
+</div>
+<div class="svg-shape small-default-large center-right-default p2-p3-p0-p1" _zindex="998" _config="small-default-large default-looser-impacted p2-p3-p0-p1 center-right-default" _widget="['rgb(51,51,51)','rgb(226,226,226)',0,3,['']]" _prepost="2-3-0-0-0" _left="-293" _top="91" _width="640" _height="217"><div class='shape-canvas'></div><div class="rotate-txt"><p>&nbsp;</p>
+
+<p><span style="color:#800000;"><span style="font-size:20px;">静态页中嵌入动态服务的原理非常简单，<br>
+为保证安全加些特别的校验机制稍有难度。</span></span></p>
+</div><div class="img-resource"><link rel="bookmark" type="text/xml" href="/software/slide11/$images/shape/dialog.svg.json"></div></div>
+</article>
+
+<article id='article-4'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>发布博客</h3></div>
+<div class="p1-p2-p3-p0 small-default-large" _zindex="1000" _config="small-default-large default-looser-impacted p1-p2-p3-p0" _left="-407" _top="-154" _width="821"><p>PINP已提供离线编辑器，在windows客户端编写博客与演示胶片非常方便。将本地写好的胶片push到github也很方便，需要额外处理的是，<span style="color:#B22222;"><strong>发布一篇文章要自动登记</strong></span>，否则别人访问你的博客主页，无法分类去查找，也无法按时间查阅历史文档，因为静态页托管没有数据库供你使用。</p>
+
+<p>&nbsp;</p>
+
+<p>我们的对策是：在&nbsp;nodeJS 开发一个自动工具用来更新文档列表，然后封装到批处理命令 pd.updatelist 中<span style="">。</span></p>
+</div>
+</article>
+
+<article id='article-5'>
+<div _zindex="1000" _config="default-large-small default-looser-impacted" _left="-400" _top="-336" _width="780" style="text-align: center;"><h3>在静态页中增加的动态服务</h3></div>
+<div class="p1-p2-p3-p0 small-default-large" _zindex="1000" _config="small-default-large default-looser-impacted p1-p2-p3-p0" _left="-357" _top="-197" _width="715"><p>在博客增加的动态服务包括：</p>
+
+<ol>
+	<li>查看作者最近发布的文章</li>
+	<li>每篇文章都可点赞，允许评论</li>
+	<li>如果访问者已开通 pinp.me 帐号，他还可收藏 github 上别人发布的拼文</li>
+	<li>提供文档聚合功能，发布博客时可指定文档的 keywords 及所属话题，访问博客时， 相关文章自动被推荐。</li>
+	<li>支持话题、子话题定义，同一话题的博客（分散在多个作者名下）可拎到列表供集中查阅。</li>
+</ol>
+</div>
+</article>
+
+</section>
