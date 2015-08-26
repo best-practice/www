@@ -1,0 +1,171 @@
+<!-- SOFTWARE-BLOGGER-10 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/software/blogger10/js/marked.js"></script>
+<title>PINP Blog</title>
+
+<script type="text/javascript">
+(function() {
+
+function getSynRequest(sUrl,sData) {
+  var xmlHttp = null;
+  if (window.XMLHttpRequest)      // Firefox, Opera, IE7, etc
+    xmlHttp = new XMLHttpRequest();
+  else if (window.ActiveXObject)  // IE6, IE5
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  
+  if (xmlHttp != null) {
+    if (sData) {
+      xmlHttp.open("POST",sUrl,false);
+      xmlHttp.send(sData);
+    }
+    else {
+      xmlHttp.open("GET",sUrl,false);
+      xmlHttp.send(null);
+    }
+    if (xmlHttp.status == 200)
+      return xmlHttp.responseText;
+  }
+  return "";
+}
+
+function getAsynRequest(sRequest,func) {
+  var xmlHttp = null;
+  if (window.XMLHttpRequest)      // Firefox, Opera, IE7, etc
+    xmlHttp = new XMLHttpRequest();
+  else if (window.ActiveXObject)  // IE6, IE5
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  
+  if (xmlHttp != null) {
+    xmlHttp.onreadystatechange = function() {
+      if (xmlHttp.readyState == 4) {
+        var s = xmlHttp.responseText;
+        if (xmlHttp.status != 200)
+          s = "";
+        xmlHttp = null;
+        if (typeof func == "function") func(s);
+      }
+    };
+    xmlHttp.open("GET",sRequest,true);
+    xmlHttp.send(null);
+  }
+}
+
+function handleWinLoaded(event) {
+  if (location.search.indexOf('?__EMPTY__') == 0) return;
+  if (window.DISABLE_LOAD) return;
+  
+  var headNode = document.querySelector("head");
+  if (!headNode) return;
+  
+  var setTitleToHead_ = function(sTit) {
+    var node = headNode.querySelector("title");
+    if (!node) {
+      node = document.createElement("title");
+      headNode.appendChild(node);
+    }
+    node.innerHTML = sTit;
+  };
+  var addScriptToHead_ = function(sSrc,fn,async) {
+    var node = document.createElement("script");
+    if (typeof fn == "function") node.onload = fn;
+    if (async) node.async = 1;
+    headNode.appendChild(node);
+    node.src = sSrc;
+  };
+  
+  var sContent = getSynRequest("$index.md");
+  if (sContent)
+    document.body.innerHTML = "<div>\n" + marked(sContent) + "\n</div>\n";
+  else document.body.innerHTML = "";
+  
+  var frameList = [];
+  var frmNodes = document.querySelectorAll('iframe[src]');
+  for (var i=0,frm; frm=frmNodes[i]; i++) {
+    frameList.push([frm,frm.src]);
+    frm.setAttribute('src','about:blank');
+  }
+  
+  var loadNextFrame = function(event) {
+    if (event) {
+      event.target.onload = null;
+      event.target.onerror = null;
+    }
+    
+    var item = frameList.shift();
+    if (item) {
+      var frm=item[0], sUrl=item[1];
+      frm.onload = loadNextFrame;
+      frm.onerror = loadNextFrame;
+      frm.setAttribute('src',sUrl);
+    }
+    // else, all loaded
+  };
+  loadNextFrame();
+  
+  getAsynRequest("$abstract.txt", function(sAbs) {
+    if (sAbs) {
+      var bTmp = sAbs.split("\n");
+      var sTmp = (bTmp[0] || "").trim().replace(/["<>]/gm,"");
+      if (sTmp) setTitleToHead_(sTmp);
+      
+      sTmp = (bTmp[1] || "").trim();
+      window.ABSTRACT_DESC = sTmp;    // abstract text should already encoded
+      
+      sTmp = (bTmp[2] || "").trim();
+      if (sTmp) {
+        sTmp = sTmp.replace(/"/gm,"");
+        if (sTmp && sTmp[0] == "<" && sTmp[sTmp.length-1] == ">")
+          sTmp = sTmp.slice(1,sTmp.length-1);
+        var node = document.createElement("meta");
+        node.setAttribute("name","keywords");
+        node.setAttribute("content",sTmp);
+        headNode.appendChild(node);
+      }
+      
+      sTmp = (bTmp[3] || "").trim();
+      if (sTmp) {
+        try {
+          var dTmp = JSON.parse(sTmp);
+          if (dTmp instanceof Object) {
+            var sCSS = dTmp.css || "";
+            if (sCSS) {
+              var node = document.createElement("div");
+              node.innerHTML = sCSS;
+              for (var i=0,item; item=node.children[i]; i++) {
+                if (item.nodeName == "SCRIPT") {
+                  var srcNode = document.createElement("script");
+                  var sSrc = item.getAttribute("src");
+                  if (sSrc)
+                    srcNode.setAttribute("src",sSrc)
+                  else srcNode.innerHTML = item.textContent;
+                  headNode.appendChild(srcNode);
+                }
+                else headNode.appendChild(item);
+              }
+            }
+          }
+        }
+        catch(e) {}
+      }
+    }
+    
+    if (location.hostname != "localhost")
+      addScriptToHead_("//www.pinp.me/software/slide11/$script/ctrlbar2.js",null,true);
+  });
+}
+
+window.addEventListener("load",handleWinLoaded,false);
+
+})();
+</script>
+</head>
+
+<body>
+
+<p>Loading...</p>
+
+</body>
+</html>
