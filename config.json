@@ -1,10 +1,10 @@
 { "version": "1.0",
-"user_name": "pinp",
+"user_name": "best-practice",
 
 "builtin_repos": [],
 "imported_repos": [["//best-js.github.io/blog/","Online help"]],
 
-"repos_name": "blog",
+"repos_name": "www",
 "repos_desc": "Blog",
 "sort_by": "modify_time",
 "list_all": true,
