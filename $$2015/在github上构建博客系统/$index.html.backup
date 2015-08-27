@@ -106,7 +106,7 @@ body {background:rgb(216,216,216);}
 
 <p>&nbsp;</p>
 
-<p>我们的对策是：在&nbsp;nodeJS 中使用 git 客户端工具，在git push命令执行前，自动更新以json格式记录的文章列表。即：使用可夹带私货的git命令向github发布版本。<span style="">夹带私货就是插入“<strong>预登记</strong>”处理。</span></p>
+<p>我们的对策是：在&nbsp;nodeJS 开发一个自动工具用来更新文档列表，然后封装到批处理命令 pd.updatelist 中<span style="">。</span></p>
 </div>
 </article>
 
