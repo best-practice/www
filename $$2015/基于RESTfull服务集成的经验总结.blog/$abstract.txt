@@ -1,4 +1,4 @@
-基于 RESTfull 服务集成的经验总结
+﻿基于 RESTfull 服务集成的经验总结
 本文是对路标1阶段1的工作进行总结，以github RESTful API服务集成为背景，介如幂等封装、Promise编程、轨道模式等实践经验。
-<>
+<#前后端开发最佳实践#,RESTful,集成、微服务、Docker>
 {}
