@@ -1,5 +1,5 @@
-﻿网志
-====
+﻿网志：寻求前后端一体化开发的最佳实践
+====================================
 
  - [计划列表](#todo)
  - [最近活动](#activities)
@@ -26,7 +26,7 @@
  
 已完成的任务：
 
- - 路标1阶段1：发布 Github 拼文博客 V1.0，参见项目主页 <a target="_blank" href="https://github.com/pinp/software">pinp/software</a>
+ - 路标1阶段1：发布 Github 拼文博客 V1.0，[详情](#ev_150828)。
 
 ---
 
@@ -35,6 +35,8 @@
 最近活动
 --------
 
-无
+### 2015/8/28  <a name="ev_150828"></a>
+
+> 参见项目主页 <a target="_blank" href="https://github.com/pinp/software">pinp/software</a>，手册（中、英文版）也已完成，与社交相关的功能以后再做（路标1阶段2）。
 
 ---
