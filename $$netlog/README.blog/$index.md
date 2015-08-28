@@ -17,15 +17,16 @@
 
 待开启的任务（按优先级排序）：
 
- - 用 AWS 构建 git 托管服务
+ - git + Docker 跑通第一个微服务
+ - 以微服务形式，为 github 博客系统添加扩展菜单
 
 <span style="color:#800; font-weight:600">执行中的任务</span>：
 
- - 发布 Github 拼文博客 V1.0 版本
+ - 用 AWS 构建 git 托管服务
  
 已完成的任务：
 
- 无
+ - 路标1阶段1：发布 Github 拼文博客 V1.0，参见项目主页 <a target="_blank" href="https://github.com/pinp/software">pinp/software</a>
 
 ---
 

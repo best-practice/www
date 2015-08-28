@@ -1,0 +1,41 @@
+﻿<!-- SOFTWARE-SLIDE-11 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='bookmark' type='text/css' href='/software/slide11/$script/styles.css' />
+<script type='text/javascript' src='/software/slide11/$plugins/esl.js'></script>
+<script type='text/javascript' src='config.js'></script>
+<script type='text/javascript' src='/software/slide11/$script/slides.js'></script>
+{{ reserved_plugin }}
+<link rel="bookmark" type="text/javascript" plugs="code-block" host="http://www.pinp.me" href="/software/slide11/$script/prettify/prettify.js" onload="pinpPrettyLoaded()" />
+{{ reserved_start }}
+<script type='text/cse' src='/software/slide11/$script/slides.cse'></script>
+
+<script type='text/javascript'>
+var CURR_USR_PATH = document.location.pathname;
+if (CURR_USR_PATH.slice(-1) != '/')
+  CURR_USR_PATH = CURR_USR_PATH.slice(0,CURR_USR_PATH.lastIndexOf('/')+1);
+</script>  {{ reserved_end }}
+<script type='text/cse'>
+#include "h5lib.h";
+namespace H5:
+  return super(window as H5Window):
+    apiNode as window->document.getElementById("slide-api");
+    apiNode.setHook("copyToClipboard", super(s):
+      window.hostWin()->copyToClipboard(s);
+    end);
+  end;
+end;
+</script>
+
+<!-- add your individual code here: <meta/> <link/> <script/> <style/>  -->
+</head>
+
+<body style='display: none'>
+<div id='slide-api'></div>
+<div id='position-hint'></div>
+<ul id='slide-menu'></ul>
+{{ article }}
+</body>
+</html>
