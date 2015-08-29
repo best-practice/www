@@ -80,7 +80,7 @@ Github提供基于版本化文件的 RESTful 服务，如果按常规方式，�
 
 ![轨道模式]($thumbnail.png)
 
-上面代码可以优化一下，whenSucc 与 whenDone 合并，写成如下样子：
+上面代码可以优化一下，whenSucc 与 whenError 合并，写成如下样子：
 
 ```
 var whenDone = function(sErr) {
